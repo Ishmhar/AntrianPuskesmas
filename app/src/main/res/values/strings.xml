@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Antrian UPTD Puskesmas Depok Utara</string>
+    <string name="login">MASUK AKUN</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="btn_login">Masuk</string>
+    <string name="btn_register">Selesai</string>
+    <string name="register">BUAT AKUN</string>
+    <string name="Kembali_Login">Klik untuk Masuk Akun</string>
+    <string name="buat_akun">Belum memiliki akun? Klik disini.</string>
+    <string name="logout">Keluar</string>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "95665701322",
+    "project_id": "antrian-puskesmas-117a1",
+    "storage_bucket": "antrian-puskesmas-117a1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95665701322:android:b0513cdc49d0058fe48f33",
+        "android_client_info": {
+          "package_name": "com.example.antrianpuskesmas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95665701322-rkciugm5sl1lvmqk99h0ptsvigv4eahk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYKMW6WydbrKBpuwl7hIeKBjfLjAAL40Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95665701322-rkciugm5sl1lvmqk99h0ptsvigv4eahk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
