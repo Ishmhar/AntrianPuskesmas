@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
+        android:name=".SmartQueueApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,13 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AntrianPuskesmas"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false"/>
-
-        <activity
-            android:name=".LoginActivity"
+            android:name=".ui.activity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +28,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".ui.activity.MainActivity"
             android:exported="false" />
     </application>
 
