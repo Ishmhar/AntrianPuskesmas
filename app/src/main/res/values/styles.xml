@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputLayoutCustom" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="TextInputLayoutCustom.HelperText" parent="TextInputLayoutCustom">
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextColor">@color/red</item>
+    </style>
+
+    <style name="TextInputLayoutCustom.HelperText.Counter" parent="TextInputLayoutCustom.HelperText">
+        <item name="counterEnabled">true</item>
+    </style>
+</resources>
