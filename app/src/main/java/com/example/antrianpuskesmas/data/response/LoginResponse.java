@@ -1,10 +1,14 @@
 package com.example.antrianpuskesmas.data.response;
 
 import com.example.antrianpuskesmas.data.model.User;
+import com.example.antrianpuskesmas.data.model.UserDetail;
 
 import java.io.Serializable;
 
 public class LoginResponse implements Serializable {
-    public String jwtToken;
-    public User user;
+    public boolean status;
+    public String message;
+    public User data;
+//    public String jwtToken;
+//    public UserDetail user;
 }

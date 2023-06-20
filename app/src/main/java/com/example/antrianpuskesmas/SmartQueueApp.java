@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
 
-import com.example.antrianpuskesmas.data.model.User;
+import com.example.antrianpuskesmas.data.model.UserDetail;
 
 import java.util.TimeZone;
 
@@ -19,6 +19,8 @@ public class SmartQueueApp extends Application {
     public static final String PREF_LAST_NAME = "LAST_NAME";
     public static final String PREF_TOKEN = "TOKEN";
     public static final String PREF_PASSWORD = "PASSWORD";
+//    public static final String PREF_MY_TICKET = "MY_TICKET";
+//    public static final String PREF_MY_TICKET_DATE = "MY_TICKET_DATE";
 
 
     private static Context context;
@@ -55,7 +57,7 @@ public class SmartQueueApp extends Application {
         return PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
     }
 
-    public void setLoginPref(User userInfo,  String token, String password) {
+    public void setLoginPref(UserDetail userInfo, String token, String password) {
         PreferenceManager.getDefaultSharedPreferences(this).edit()
                 .putLong(SmartQueueApp.PREF_USER_ID, userInfo.getId())
                 .putString(SmartQueueApp.PREF_FIRST_NAME, userInfo.getFirstname())
@@ -95,11 +97,31 @@ public class SmartQueueApp extends Application {
         return getSharedPreference().getString(PREF_PASSWORD, "");
     }
 
+/*    public String getMyTicket() {
+        return getSharedPreference().getString(PREF_MY_TICKET, "");
+    }
+
+    public String getMyTicketDate() {
+        return getSharedPreference().getString(PREF_MY_TICKET_DATE, "");
+    }*/
+
     public void setToken(String token) {
         PreferenceManager.getDefaultSharedPreferences(this).edit()
                 .putString(SmartQueueApp.PREF_TOKEN, token)
                 .apply();
     }
+
+/*    public void setMyTicket(String ticket) {
+        PreferenceManager.getDefaultSharedPreferences(this).edit()
+                .putString(SmartQueueApp.PREF_MY_TICKET, ticket)
+                .apply();
+    }
+
+    public void setMyTicketDate(String insertDate) {
+        PreferenceManager.getDefaultSharedPreferences(this).edit()
+                .putString(SmartQueueApp.PREF_MY_TICKET_DATE, insertDate)
+                .apply();
+    }*/
 
     public void clearTokenPreferences() {
         PreferenceManager.getDefaultSharedPreferences(this).edit()

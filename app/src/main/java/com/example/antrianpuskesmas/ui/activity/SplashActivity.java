@@ -13,6 +13,9 @@ import com.example.antrianpuskesmas.R;
 import com.example.antrianpuskesmas.SmartQueueApp;
 import com.example.antrianpuskesmas.util.Util;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
@@ -27,6 +30,7 @@ public class SplashActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         SmartQueueApp app = SmartQueueApp.getApplication(SplashActivity.this);
+//        checkDate(app);
 
         new Handler().postDelayed(() -> {
             if (app.getToken() != null && !app.getToken().isEmpty()) {
@@ -37,4 +41,19 @@ public class SplashActivity extends AppCompatActivity {
             }
         }, 2000);
     }
+
+    /*@SuppressLint("SimpleDateFormat")
+    private void checkDate(SmartQueueApp app) {
+        Date dateNow = new Date();
+//        SimpleDateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy");
+//        String dateNowString = outputFormat.format(dateNow);
+        String dateNowString = Util.PARAM_DATE_FORMAT.format(dateNow);
+
+        if (!app.getMyTicketDate().equals(dateNowString)) {
+            Log.d(TAG, "onCreate: Tanggal tidak sama");
+            app.setMyTicket("");
+        } else {
+            Log.d(TAG, "onCreate: Tanggal sama");
+        }
+    }*/
 }

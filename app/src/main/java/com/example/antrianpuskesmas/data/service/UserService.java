@@ -1,7 +1,7 @@
 package com.example.antrianpuskesmas.data.service;
 
 import com.example.antrianpuskesmas.data.model.AuthenticateRequest;
-import com.example.antrianpuskesmas.data.model.User;
+import com.example.antrianpuskesmas.data.model.UserDetail;
 import com.example.antrianpuskesmas.data.response.LoginResponse;
 import com.example.antrianpuskesmas.data.response.RegisResponse;
 
@@ -15,6 +15,6 @@ public interface UserService {
     Call<LoginResponse> loginMobile(@Body AuthenticateRequest request);
 
     @POST("user/regis")
-    Call<RegisResponse> regisMobile(@Body User regis);
+    Call<RegisResponse> regisMobile(@Body UserDetail regis);
 
 }

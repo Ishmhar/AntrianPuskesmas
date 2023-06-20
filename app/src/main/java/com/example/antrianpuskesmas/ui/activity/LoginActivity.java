@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.example.antrianpuskesmas.R;
 import com.example.antrianpuskesmas.SmartQueueApp;
 import com.example.antrianpuskesmas.data.model.AuthenticateRequest;
+import com.example.antrianpuskesmas.data.model.User;
 import com.example.antrianpuskesmas.ui.viewmodel.UserViewModel;
 import com.example.antrianpuskesmas.util.CustomProgressDialog;
 import com.example.antrianpuskesmas.util.Util;
@@ -23,9 +24,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
-//    TextInputEditText editTextEmail, editTextPassword;
-//    FirebaseAuth mAuth;
-//    Button buttonLogin;
 
     private static final String TAG = LoginActivity.class.getSimpleName();
     private CustomProgressDialog progressDialog;
@@ -33,27 +31,11 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     TextView tvRegisNow;
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if (currentUser != null) {
-//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(intent);
-//            finish();
-//        }
-//    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-//        mAuth = FirebaseAuth.getInstance();
-//        editTextEmail = findViewById(R.id.email);
-//        editTextPassword = findViewById(R.id.password);
-
-//        buttonLogin = findViewById(R.id.btn_login);
         progressBar = findViewById(R.id.progressbar);
         tvRegisNow = findViewById(R.id.registerNow);
         tvRegisNow.setOnClickListener(view -> goToRegis());
@@ -68,10 +50,18 @@ public class LoginActivity extends AppCompatActivity {
         userViewModel.getLoginResult().observe(this, loginResp -> {
             progressDialog.dismiss();
             if (loginResp != null) {
-                Toast.makeText(this, loginResp.jwtToken, Toast.LENGTH_SHORT).show();
-                String password = userViewModel.getPassword();
-                SmartQueueApp.getApplication(LoginActivity.this).setLoginPref(loginResp.user, loginResp.jwtToken, password);
-                Util.goToHomePage(this);
+//                Toast.makeText(this, loginResp.jwtToken, Toast.LENGTH_SHORT).show();
+
+                if (loginResp.status) {
+                    User data = loginResp.data;
+                    String password = userViewModel.getPassword();
+                    SmartQueueApp.getApplication(LoginActivity.this).setLoginPref(data.user, data.jwtToken, password);
+                    Util.goToHomePage(this);
+                } else {
+                    Toast.makeText(this, loginResp.message, Toast.LENGTH_SHORT).show();
+                }
+            } else {
+//                Toast.makeText(this, "Username atau Password salah, silahkan periksan kembali", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -105,44 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                         ", password: " + password);
             }
         });
-
-//        buttonLogin.setOnClickListener(view -> {
-//            progressBar.setVisibility(View.VISIBLE);
-//            String email, password;
-//            email = String.valueOf(editTextEmail.getText());
-//            password = String.valueOf(editTextPassword.getText());
-//
-//            if (TextUtils.isEmpty(email)) {
-//                Toast.makeText(LoginActivity.this, "Silahkan masukkan Email.", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//
-//            if (TextUtils.isEmpty(password)) {
-//                Toast.makeText(LoginActivity.this, "Silahkan masukkan Password.", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-
-//            mAuth.signInWithEmailAndPassword(email, password)
-//                    .addOnCompleteListener(task -> {
-//                        progressBar.setVisibility(View.GONE);
-//                        if (task.isSuccessful()) {
-//                            Toast.makeText(getApplicationContext(), "Masuk Akun berhasil.", Toast.LENGTH_SHORT).show();
-//                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                            startActivity(intent);
-//                            finish();
-//                        } else {
-//                            Toast.makeText(LoginActivity.this, "Gagal Masuk Akun.",
-//                                    Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//        });
     }
-
-//    private void goToHomePage() {
-//        Intent goToMainPage = new Intent(LoginActivity.this, MainActivity.class);
-//        startActivity(goToMainPage);
-//        finish();
-//    }
 
     private void goToRegis() {
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);

@@ -8,7 +8,7 @@ import com.example.antrianpuskesmas.data.RepositoryCallback;
 import com.example.antrianpuskesmas.data.Result;
 import com.example.antrianpuskesmas.data.datastore.UserDataSource;
 import com.example.antrianpuskesmas.data.model.AuthenticateRequest;
-import com.example.antrianpuskesmas.data.model.User;
+import com.example.antrianpuskesmas.data.model.UserDetail;
 import com.example.antrianpuskesmas.data.response.LoginResponse;
 import com.example.antrianpuskesmas.data.response.RegisResponse;
 
@@ -45,7 +45,7 @@ public class UserRepository {
         });
     }
 
-    public void regisMobile(User user,
+    public void regisMobile(UserDetail user,
                             final RepositoryCallback<RegisResponse> callback) {
         executor.execute(() -> {
             Result<RegisResponse> result = dataSource.regisMobile(user);

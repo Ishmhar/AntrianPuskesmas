@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel;
 import com.example.antrianpuskesmas.data.Result;
 import com.example.antrianpuskesmas.data.datastore.UserDataSource;
 import com.example.antrianpuskesmas.data.model.AuthenticateRequest;
-import com.example.antrianpuskesmas.data.model.User;
+import com.example.antrianpuskesmas.data.model.UserDetail;
 import com.example.antrianpuskesmas.data.repository.UserRepository;
 import com.example.antrianpuskesmas.data.response.LoginResponse;
 import com.example.antrianpuskesmas.data.response.RegisResponse;
@@ -48,7 +48,7 @@ public class UserViewModel extends ViewModel {
         this.username = String.valueOf(request.getUsername());
         this.password = String.valueOf(request.getPassword());
         userRepository.loginMobile(request, result -> {
-            Log.d(TAG, "loginMobile result: " + result);
+//            Log.d(TAG, "loginMobile result: " + result);
             if (result instanceof Result.Success) {
                 Log.d(TAG, "loginMobile: berhasil ");
                 LoginResponse resp = ((Result.Success<LoginResponse>) result).getData();
@@ -61,9 +61,9 @@ public class UserViewModel extends ViewModel {
     }
 
 
-    public void regisMobile(User user) {
+    public void regisMobile(UserDetail user) {
         userRepository.regisMobile(user, result -> {
-            Log.d(TAG, "regisMobile result: " + result);
+//            Log.d(TAG, "regisMobile result: " + result);
             if (result instanceof Result.Success) {
                 Log.d(TAG, "regisMobile: berhasil ");
                 RegisResponse resp = ((Result.Success<RegisResponse>) result).getData();

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ui.activity.RegisterActivity">
 
     <LinearLayout
@@ -114,16 +115,16 @@
             android:id="@+id/btn_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:text="@string/btn_register"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/login_now"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"

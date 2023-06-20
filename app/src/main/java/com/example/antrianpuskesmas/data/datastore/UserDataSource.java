@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.example.antrianpuskesmas.data.Result;
 import com.example.antrianpuskesmas.data.model.AuthenticateRequest;
-import com.example.antrianpuskesmas.data.model.User;
+import com.example.antrianpuskesmas.data.model.UserDetail;
 import com.example.antrianpuskesmas.data.response.LoginResponse;
 import com.example.antrianpuskesmas.data.response.RegisResponse;
 import com.example.antrianpuskesmas.util.Util;
@@ -26,7 +26,7 @@ public class UserDataSource {
             Log.d(TAG, "loginMobile: loginResponse: " + Util.getGson().toJson(loginResp));
 
             if (loginResp != null) {
-                Log.d(TAG, "loginMobile code: " + loginResp.jwtToken);
+                Log.d(TAG, "loginMobile message: " + loginResp.message);
             }
             return new Result.Success<>(loginResp);
         } catch (Exception e) {
@@ -35,7 +35,7 @@ public class UserDataSource {
         }
     }
 
-    public Result<RegisResponse> regisMobile(User user) {
+    public Result<RegisResponse> regisMobile(UserDetail user) {
         try {
 
             Response<RegisResponse> execute = Util.loginService().regisMobile(user)
@@ -45,7 +45,7 @@ public class UserDataSource {
             Log.d(TAG, "regisMobile: regisResponse: " + Util.getGson().toJson(regisResp));
 
             if (regisResp != null) {
-                Log.d(TAG, "regisMobile code: " + regisResp.jwtToken);
+                Log.d(TAG, "regisMobile message: " + regisResp.message);
             }
             return new Result.Success<>(regisResp);
         } catch (Exception e) {

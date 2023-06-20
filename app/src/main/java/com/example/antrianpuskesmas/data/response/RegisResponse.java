@@ -5,6 +5,11 @@ import com.example.antrianpuskesmas.data.model.User;
 import java.io.Serializable;
 
 public class RegisResponse implements Serializable {
-    public String jwtToken;
-    public User user;
+    public boolean status;
+    public String message;
+    public User data;
+//    public String jwtToken;
+//    public User user;
 }
+
+
