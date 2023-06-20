@@ -16,4 +16,11 @@
 
     <string name="text_progress_dialog">Loading...</string>
     <string name="must_be_filled">*Harus diisi</string>
+    <string name="dental_queue">Ambil Antrian Gigi</string>
+    <string name="child_queue">Ambil Antrian Anak</string>
+    <string name="general_queue">Ambil Antrian Umum</string>
+    <string name="show_queue">Lihat Antrian</string>
+    <string name="my_queue">Lihat Tiket Terakhir Saya</string>
+    <string name="account">Akun</string>
+    <string name="your_queue">Nomor antrian Anda adalah</string>
 </resources>
