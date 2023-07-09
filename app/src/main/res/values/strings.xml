@@ -4,9 +4,23 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="btn_login">Masuk</string>
-    <string name="btn_register">Selesai</string>
+    <string name="btn_register">Daftar</string>
     <string name="register">BUAT AKUN</string>
     <string name="Kembali_Login">Klik untuk Masuk Akun</string>
     <string name="buat_akun">Belum memiliki akun? Klik disini.</string>
     <string name="logout">Keluar</string>
+    <string name="first_name">Nama Depan</string>
+    <string name="last_name">Nama Belakang</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
+
+    <string name="text_progress_dialog">Loading...</string>
+    <string name="must_be_filled">*Harus diisi</string>
+    <string name="dental_queue">Ambil Antrian Gigi</string>
+    <string name="child_queue">Ambil Antrian Anak</string>
+    <string name="general_queue">Ambil Antrian Umum</string>
+    <string name="show_queue">Lihat Antrian</string>
+    <string name="my_queue">Lihat Tiket Terakhir Saya</string>
+    <string name="account">Akun</string>
+    <string name="your_queue">Nomor antrian Anda adalah</string>
 </resources>

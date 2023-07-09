@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--     Text Input Layout     -->
+    <style name="TextInputLayoutCustom" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="TextInputLayoutCustom.HelperText" parent="TextInputLayoutCustom">
+        <item name="helperTextEnabled">true</item>
+        <item name="helperTextTextColor">@color/red</item>
+    </style>
+
+    <style name="TextInputLayoutCustom.HelperText.Counter" parent="TextInputLayoutCustom.HelperText">
+        <item name="counterEnabled">true</item>
+    </style>
+
+    <!--     Text Input Edit Text     -->
+    <style name="TextInputEditTextCustom">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="TextInputEditTextCustom.Disable" parent="TextInputEditTextCustom">
+        <item name="android:editable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:inputType">none</item>
+    </style>
+
+    <style name="CustomCardView" parent="">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardUseCompatPadding">true</item>
+
+
+    </style>
+</resources>
